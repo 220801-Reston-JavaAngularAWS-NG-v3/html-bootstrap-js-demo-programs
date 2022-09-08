@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Value displayed by resolve</h1>
+        <h3 id="display"></h3>
+        <h1>Value displayed by reject</h1>
+        <h3 id="show"></h3>
+
+        <script>
+
+            var myPromise = new Promise((resolve, reject)=>{
+                // here we can call the first asyncronous function
+                var returnedData = 45;
+                resolve(45);
+
+                // in case the asynchronous function threw an error we call reject
+                //reject(60);
+            })
+            .then((data1)=>{
+                // here we can call the second asynchronous function
+                return 2 * data1;
+            })
+            .then((data2)=>document.getElementById("display").innerHTML=data2)
+            .catch((error)=>document.getElementById("show").innerHTML=error);
+
+
+        </script>
+
+
+    </body>
+</html>
