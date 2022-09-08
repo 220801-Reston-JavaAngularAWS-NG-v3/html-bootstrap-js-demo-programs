@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>First way</h1>
+        <h2 id="first"></h2>
+        <h1>Second way</h1>
+        <h2 id="second"></h2>
+        <h1>Third way</h1>
+        <h2 id="third"></h2>
+
+        <script>
+            // first way of defining a function
+            function multiply1(num1, num2){
+                return num1 * num2;
+            }
+            document.getElementById("first").innerHTML=multiply1(5, 10);
+
+            // second way of defining a function
+            var multiply2 = function (num1, num2){
+                return num1 * num2;
+            }
+            document.getElementById("second").innerHTML=multiply2(15, 2);
+
+            // third way of defining a function
+            var multiply3 = (num1, num2)=>num1 * num2;
+        
+            document.getElementById("third").innerHTML=multiply3(10, 2);
+
+
+        </script>
+
+    </body>
+</html>
